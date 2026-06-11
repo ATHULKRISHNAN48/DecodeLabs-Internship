@@ -5,79 +5,12 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6f9;
-    color: #333;
-    transition: 0.4s;
-}
-
-/* --- Dark Mode --- */
-.dark {
-    background: #121212;
-    color: white;
-}
-
-.dark section {
-    background: #1b1b1b !important;
-}
-
-.dark .card,
-.dark .stat-box {
-    background: #252525;
-    color: white;
-}
-
-/* --- Theme Button --- */
-#themeBtn {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 999;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* --- Navbar --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: #111827;
-    color: white;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: #00d4ff;
-}
-
-/* --- Hero Section --- */
+/* --- Hero Section & Mobile Fixes --- */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -88,123 +21,24 @@ nav {
     background: linear-gradient(-45deg, #4f46e5, #7c3aed, #00d4ff, #ff4ecd);
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
+    padding: 60px 20px;
 }
 
-.hero-content h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-    animation: floatText 3s ease-in-out infinite;
-}
-
-.hero-content p {
-    font-size: 22px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 30px;
-    background: white;
-    color: #4f46e5;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-}
-
-/* --- Content Sections --- */
-section {
-    padding: 80px 10%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 38px;
-}
-
-.cards {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    width: 300px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
-    transition: .4s;
-}
-
-.card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 0 20px #4f46e5, 0 0 40px #7c3aed;
-}
-
-.about-text {
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-/* --- Contact & Footer --- */
-form {
-    max-width: 600px;
-    margin: auto;
-}
-
-input, textarea {
+.hero-content {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    max-width: 800px;
 }
 
-textarea {
-    height: 140px;
-}
-
-form button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background: #4f46e5;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* --- Animations --- */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes floatText {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+/* Force image to respect mobile width */
+.float3d {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
 }
 
 /* --- Final Mobile Responsiveness --- */
 @media(max-width: 768px) {
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
     nav {
         flex-direction: column;
         padding: 20px 0;
@@ -214,26 +48,22 @@ form button {
     .nav-links {
         flex-direction: column;
         gap: 12px;
-        margin-top: 10px;
-    }
-
-    .hero {
-        padding: 40px 15px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 90%;
-        margin: 0 auto;
+        margin-top: 15px;
     }
 
     .hero-content h1 {
         font-size: 28px;
+        line-height: 1.2;
     }
 
     .hero-content p {
         font-size: 16px;
     }
+
+    /* Prevent overflow on all content sections */
+    section {
+        padding: 40px 5%;
+    }
 }
+
+/* --- Keep the rest of your original animations and card styles here --- */
