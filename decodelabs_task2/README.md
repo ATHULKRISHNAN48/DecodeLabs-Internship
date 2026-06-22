@@ -37,6 +37,10 @@ DELETE /students/:id
 - 404 Not Found  
 
 ---
+## Live API Link
+
+https://student-managementapi-c63r.onrender.com/students
+
 
 ## ▶️ How to Run
 
