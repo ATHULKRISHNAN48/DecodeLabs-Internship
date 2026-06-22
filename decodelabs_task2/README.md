@@ -62,4 +62,4 @@ Project2/
 ---
 
 ## 👨‍💻 Author
-DecodeLabs Internship Project
+Athul krishnan U
