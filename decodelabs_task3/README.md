@@ -106,8 +106,7 @@ http://localhost:3000
 ---
 
 ## 👨‍💻 Author
-
-Student CRUD API Project
+Athul krishnan U
 
 ---
 
