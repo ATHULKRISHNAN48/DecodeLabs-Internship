@@ -1,4 +1,4 @@
-const API="https://your-render-url.onrender.com/students";
+const API = "https://decodelab.onrender.com/students";
 
 async function getStudents(){
 
